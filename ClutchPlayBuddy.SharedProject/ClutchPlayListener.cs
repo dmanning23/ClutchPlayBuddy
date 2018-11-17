@@ -41,7 +41,7 @@ namespace ClutchPlayBuddy
 		{
 			CurrentHeuristic = 0;
 			CurrentMessage = string.Empty;
-			CurrentClutchPlay = null;
+			CurrentClutchPlay = new ImageList(Game.GraphicsDevice);
 			PostPlayTimer = new CountdownTimer();
 			PostPlayTimer.Stop();
 		}
@@ -64,7 +64,7 @@ namespace ClutchPlayBuddy
 			if (!PostPlayTimer.Paused && !PostPlayTimer.HasTimeRemaining)
 			{
 				//grab the current image stack
-				CurrentClutchPlay = new ImageList(Grabber.CurrentImageList);
+				CurrentClutchPlay.CopyImageList(Grabber.CurrentImageList);
 				PostPlayTimer.Stop();
 			}
 		}

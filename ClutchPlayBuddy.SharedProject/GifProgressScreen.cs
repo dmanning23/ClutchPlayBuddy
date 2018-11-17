@@ -5,8 +5,6 @@ using Microsoft.Xna.Framework.Graphics;
 using MonogameScreenTools;
 using ResolutionBuddy;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ClutchPlayBuddy
 {

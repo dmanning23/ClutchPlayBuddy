@@ -6,10 +6,12 @@ using MonogameScreenTools;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace ClutchPlayBuddy
 {
+	/// <summary>
+	/// This is a MenuBuddy image widget that displays a series of frames.
+	/// </summary>
 	public class AnimatedGifImage : Image, IDisposable
 	{
 		#region Properties

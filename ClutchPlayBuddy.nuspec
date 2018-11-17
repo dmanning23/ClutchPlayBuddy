@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+	<metadata>
+		<id>ClutchPlayBuddy</id>
+		<version>2.0.3</version>
+		<title>ClutchPlayBuddy</title>
+		<authors>dmanning23</authors>
+		<owners>dmanning23</owners>
+		<projectUrl>https://github.com/dmanning23/ClutchPlayBuddy</projectUrl>
+		<licenseUrl>https://github.com/dmanning23/ClutchPlayBuddy/blob/master/LICENSE.txt</licenseUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>A MonoGame lib for sharing gameplay on social media</description>
+		<releaseNotes />
+		<copyright>Copyright 2016</copyright>
+		<tags>android, ios, windows universal, monogame, xamarin</tags>
+		<dependencies>
+
+			<!--Xamarin.Android-->
+			<group targetFramework="MonoAndroid10">
+				<dependency id="MonoGame.Framework.Android" version="3.7"/>
+				<dependency id="ExternalStorageBuddy" version="1.0"/>
+				<dependency id="FilenameBuddy" version="2.0"/>
+				<dependency id="FontBuddy" version="2.0"/>
+				<dependency id="GameTimer" version="2.0"/>
+				<dependency id="HadoukInput" version="2.0"/>
+				<dependency id="InputHelper" version="2.0"/>
+				<dependency id="MatrixExtensions" version="2.0"/>
+				<dependency id="MenuBuddy" version="2.0"/>
+				<dependency id="MonogameScreenTools" version="2.0"/>
+				<dependency id="MouseBuddy" version="2.0"/>
+				<dependency id="PrimitiveBuddy" version="2.0"/>
+				<dependency id="RandomExtensions.dmanning23" version="2.0"/>
+				<dependency id="ResolutionBuddy" version="2.0"/>
+				<dependency id="StateMachineBuddy" version="2.0"/>
+				<dependency id="ToastBuddyLib" version="2.0"/>
+				<dependency id="TouchScreenBuddy" version="2.0"/>
+				<dependency id="Vector2Extensions" version="2.0"/>
+				<dependency id="XmlBuddy" version="2.0"/>
+			</group>
+
+			<!--Xamarin.iOS Unified-->
+			<group targetFramework="Xamarin.iOS10">
+				<dependency id="MonoGame.Framework.iOS" version="3.7"/>
+				<dependency id="ExternalStorageBuddy" version="1.0"/>
+				<dependency id="FilenameBuddy" version="2.0"/>
+				<dependency id="FontBuddy" version="2.0"/>
+				<dependency id="GameTimer" version="2.0"/>
+				<dependency id="HadoukInput" version="2.0"/>
+				<dependency id="InputHelper" version="2.0"/>
+				<dependency id="MatrixExtensions" version="2.0"/>
+				<dependency id="MenuBuddy" version="2.0"/>
+				<dependency id="MonogameScreenTools" version="2.0"/>
+				<dependency id="MouseBuddy" version="2.0"/>
+				<dependency id="PrimitiveBuddy" version="2.0"/>
+				<dependency id="RandomExtensions.dmanning23" version="2.0"/>
+				<dependency id="ResolutionBuddy" version="2.0"/>
+				<dependency id="StateMachineBuddy" version="2.0"/>
+				<dependency id="ToastBuddyLib" version="2.0"/>
+				<dependency id="TouchScreenBuddy" version="2.0"/>
+				<dependency id="Vector2Extensions" version="2.0"/>
+				<dependency id="XmlBuddy" version="2.0"/>
+			</group>
+
+			<group targetFramework="net451">
+				<dependency id="MonoGame.Framework.WindowsDX" version="3.7"/>
+				<dependency id="ExternalStorageBuddy" version="1.0"/>
+				<dependency id="FilenameBuddy" version="2.0"/>
+				<dependency id="FontBuddy" version="2.0"/>
+				<dependency id="GameTimer" version="2.0"/>
+				<dependency id="HadoukInput" version="2.0"/>
+				<dependency id="InputHelper" version="2.0"/>
+				<dependency id="MatrixExtensions" version="2.0"/>
+				<dependency id="MenuBuddy" version="2.0"/>
+				<dependency id="MonogameScreenTools" version="2.0"/>
+				<dependency id="MouseBuddy" version="2.0"/>
+				<dependency id="PrimitiveBuddy" version="2.0"/>
+				<dependency id="RandomExtensions.dmanning23" version="2.0"/>
+				<dependency id="ResolutionBuddy" version="2.0"/>
+				<dependency id="StateMachineBuddy" version="2.0"/>
+				<dependency id="ToastBuddyLib" version="2.0"/>
+				<dependency id="TouchScreenBuddy" version="2.0"/>
+				<dependency id="Vector2Extensions" version="2.0"/>
+				<dependency id="XmlBuddy" version="2.0"/>
+			</group>
+
+		</dependencies>
+	</metadata>
+	<files>
+
+		<!--Xamarin.Android-->
+		<file src="ClutchPlayBuddy.Android\bin\Release\ClutchPlayBuddy.Android.pdb" target="lib\MonoAndroid10\ClutchPlayBuddy.Android.pdb" />
+		<file src="ClutchPlayBuddy.Android\bin\Release\ClutchPlayBuddy.Android.dll" target="lib\MonoAndroid10\ClutchPlayBuddy.Android.dll" />
+
+		<!--Xamarin.iOS Unified-->
+		<file src="ClutchPlayBuddy.iOS\bin\Release\ClutchPlayBuddy.iOS.pdb" target="lib\Xamarin.iOS10\ClutchPlayBuddy.iOS.pdb" />
+		<file src="ClutchPlayBuddy.iOS\bin\Release\ClutchPlayBuddy.iOS.dll" target="lib\Xamarin.iOS10\ClutchPlayBuddy.iOS.dll" />
+
+		<!--WindowsDX-->
+		<file src="ClutchPlayBuddy.WindowsDX\bin\Release\ClutchPlayBuddy.WindowsDX.pdb" target="lib\net451\ClutchPlayBuddy.WindowsDX.pdb" />
+		<file src="ClutchPlayBuddy.WindowsDX\bin\Release\ClutchPlayBuddy.WindowsDX.dll" target="lib\net451\ClutchPlayBuddy.WindowsDX.dll" />
+
+	</files>
+</package>

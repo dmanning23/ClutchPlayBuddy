@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using MenuBuddy;
+using Microsoft.Xna.Framework;
 using System;
 using ToastBuddyLib;
 #if ANDROID
@@ -48,6 +49,9 @@ namespace ClutchPlayBuddy
 
 				// Now Send the Share Intent
 				CrossCurrentActivity.Current.AppContext.StartActivity(Intent.CreateChooser(shareIntent, "Choose one"));
+
+				//// Now Send the Share Intent
+				//Application.Context.StartActivity(Intent.CreateChooser(shareIntent, "Choose one"));
 #elif __IOS__
 				UIApplication.SharedApplication.InvokeOnMainThread(delegate
 				{
@@ -76,8 +80,12 @@ namespace ClutchPlayBuddy
 			{
 				var messageDisplay = Game.Services.GetService<IToastBuddy>();
 				messageDisplay.ShowMessage($"Error sharing image", Color.Yellow);
+
+#if DEBUG
+				var screenManager = Game.Services.GetService<IScreenManager>();
+				screenManager.AddScreen(new ErrorScreen(ex));
+#endif
 			}
 		}
-
 	}
 }

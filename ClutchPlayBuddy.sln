@@ -11,6 +11,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClutchPlayBuddy.Android", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClutchPlayBuddy.iOS", "ClutchPlayBuddy.iOS\ClutchPlayBuddy.iOS.csproj", "{E71F3053-056C-4381-9638-048ED73BDFF6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{95B07A7C-B0CC-4B29-87AF-FF0BFFB4163C}"
+	ProjectSection(SolutionItems) = preProject
+		buildNugetPackages.ps1 = buildNugetPackages.ps1
+		ClutchPlayBuddy.nuspec = ClutchPlayBuddy.nuspec
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		ClutchPlayBuddy.SharedProject\ClutchPlayBuddy.SharedProject.projitems*{3d8fde26-68aa-4b6e-a088-269b78e34795}*SharedItemsImports = 4
