@@ -4,6 +4,11 @@ using MenuBuddy;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using MonogameScreenTools;
+using System;
+using ToastBuddyLib;
+#if ANDROID
+using Plugin.CurrentActivity;
+#endif
 
 namespace ClutchPlayBuddy
 {
@@ -17,6 +22,8 @@ namespace ClutchPlayBuddy
 		string Filename { get; set; }
 		string ShareText { get; set; }
 
+		bool shareYes = false;
+
 		#endregion //Properties
 
 		#region Methods
@@ -25,9 +32,10 @@ namespace ClutchPlayBuddy
 		{
 			Filename = filename;
 			ShareText = shareText;
+			ExitOnOk = false;
 
-			OkText = "Yes";
-			CancelText = "No";
+			OkText = "Share";
+			CancelText = "Skip";
 			OnSelect += OnShareYes;
 			OnCancel += OnShareNo;
 		}
@@ -37,7 +45,18 @@ namespace ClutchPlayBuddy
 			base.AddAddtionalControls();
 
 			StorageHelper = ScreenManager.Game.Services.GetService<IExternalStorageHelper>();
+
+			if (null == StorageHelper)
+			{
+				throw new Exception("You need to add the IExternalStorageHelper to Game.Services");
+			}
+
 			Listener = ScreenManager.Game.Services.GetService<IClutchPlayListener>();
+
+			if (null == Listener)
+			{
+				throw new Exception("You need to add the IClutchPlayListener to Game.Services");
+			}
 
 			//add a shim between the text and the buttons
 			ControlStack.AddItem(new Shim() { Size = new Vector2(0, 56f) });
@@ -54,6 +73,8 @@ namespace ClutchPlayBuddy
 
 		private void OnShareYes(object sender, ClickEventArgs e)
 		{
+			shareYes = true;
+
 			if (!StorageHelper.HasPermission)
 			{
 				var externalStorageMessage = new OkScreen("The image will be saved to the Pictures folder in external storage before it is shared.", Content);
@@ -63,46 +84,47 @@ namespace ClutchPlayBuddy
 			else
 			{
 				BeginGifProcess();
+				ExitScreen();
 			}
 		}
 
 		private void ExternalStorageMessage_OnSelect(object sender, ClickEventArgs e)
 		{
-			StorageHelper.StoragePermissionGranted -= Helper_StoragePermissionGranted;
-			StorageHelper.StoragePermissionGranted += Helper_StoragePermissionGranted;
 			StorageHelper.AskPermission();
-		}
-
-		private void Helper_StoragePermissionGranted(object sender, ExternalStoragePermissionEventArgs e)
-		{
-			if (e.PermissionGranted)
-			{
-				BeginGifProcess();
-			}
 		}
 
 		private void BeginGifProcess()
 		{
 			gif = new GifHelper();
 
-			gif.OnGifCreated -= Gif_OnGifCreated;
-			gif.OnGifCreated += Gif_OnGifCreated;
-			ScreenManager.AddScreen(new GifProgressScreen(gif, Content));
+			ScreenManager.AddScreen(new GifProgressScreen(gif, ShareText, Content));
+			
 			gif.Export(Listener.CurrentClutchPlay, Filename, true, 2);
-		}
-
-		private void Gif_OnGifCreated(object sender, GifCreatedEventArgs e)
-		{
-			gif.OnGifCreated -= Gif_OnGifCreated;
-
-			var sharer = new ShareBuddy(ScreenManager.Game);
-
-			sharer.ShareImage(e.Filename, ShareText);
 		}
 
 		private void OnShareNo(object sender, ClickEventArgs e)
 		{
 			ExitScreen();
+		}
+
+		public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)
+		{
+			base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
+
+			if (shareYes && StorageHelper.HasResult && !IsExiting)
+			{
+				ExitScreen();
+
+				if (StorageHelper.HasPermission)
+				{
+					BeginGifProcess();
+				}
+				else
+				{
+					//set this flag to false so it asks again next time
+					StorageHelper.HasResult = false;
+				}
+			}
 		}
 
 		#endregion //Methods

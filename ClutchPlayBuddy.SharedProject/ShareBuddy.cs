@@ -45,7 +45,7 @@ namespace ClutchPlayBuddy
 				// Add the required info the the shareIntent
 				shareIntent.PutExtra(Intent.ExtraStream, uri);
 				shareIntent.SetType("image/*");
-				shareIntent.AddFlags(ActivityFlags.GrantReadUriPermission);
+				shareIntent.AddFlags(ActivityFlags.GrantReadUriPermission | ActivityFlags.NewTask);
 
 				// Now Send the Share Intent
 				CrossCurrentActivity.Current.AppContext.StartActivity(Intent.CreateChooser(shareIntent, "Choose one"));
@@ -79,12 +79,8 @@ namespace ClutchPlayBuddy
 			catch (Exception ex)
 			{
 				var messageDisplay = Game.Services.GetService<IToastBuddy>();
-				messageDisplay.ShowMessage($"Error sharing image", Color.Yellow);
-
-#if DEBUG
-				var screenManager = Game.Services.GetService<IScreenManager>();
-				screenManager.AddScreen(new ErrorScreen(ex));
-#endif
+				messageDisplay.ShowMessage($"Error sharing image:", Color.Yellow);
+				messageDisplay.ShowMessage(ex.Message, Color.Yellow);
 			}
 		}
 	}

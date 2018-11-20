@@ -5,17 +5,20 @@ using Microsoft.Xna.Framework.Graphics;
 using MonogameScreenTools;
 using ResolutionBuddy;
 using System;
+using ToastBuddyLib;
 
 namespace ClutchPlayBuddy
 {
 	public class GifProgressScreen : WidgetScreen
 	{
 		IGifHelper GifHelper { get; set; }
+		string ShareText { get; set; }
 
-		public GifProgressScreen(IGifHelper gifHelper, ContentManager content = null) : base("GifProgressScreen", content)
+		public GifProgressScreen(IGifHelper gifHelper, string shareText, ContentManager content = null) : base("GifProgressScreen", content)
 		{
 			CoverOtherScreens = true;
 			CoveredByOtherScreens = false;
+			ShareText = shareText;
 
 			GifHelper = gifHelper;
 			GifHelper.OnGifCreated += GifHelper_OnGifCreated;
@@ -24,7 +27,20 @@ namespace ClutchPlayBuddy
 		private void GifHelper_OnGifCreated(object sender, GifCreatedEventArgs e)
 		{
 			GifHelper.OnGifCreated -= GifHelper_OnGifCreated;
+
 			ExitScreen();
+
+			if (e.Success)
+			{
+				var sharer = new ShareBuddy(ScreenManager.Game);
+				sharer.ShareImage(e.Filename, ShareText);
+			}
+			else
+			{
+				var messageDisplay = ScreenManager.Game.Services.GetService<IToastBuddy>();
+				messageDisplay.ShowMessage($"There was an error creating gif:", Color.Yellow);
+				messageDisplay.ShowMessage(e.ErrorMessage, Color.Yellow);
+			}
 		}
 
 		public override void LoadContent()
