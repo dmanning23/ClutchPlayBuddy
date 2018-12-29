@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
 	<metadata>
 		<id>ClutchPlayBuddy</id>
-		<version>2.0.10</version>
+		<version>2.0.12</version>
 		<title>ClutchPlayBuddy</title>
 		<authors>dmanning23</authors>
 		<owners>dmanning23</owners>
@@ -31,6 +31,7 @@
 				<dependency id="PrimitiveBuddy" version="2.0"/>
 				<dependency id="RandomExtensions.dmanning23" version="2.0"/>
 				<dependency id="ResolutionBuddy" version="2.0"/>
+				<dependency id="ShareBuddy" version="2.0"/>
 				<dependency id="StateMachineBuddy" version="2.0"/>
 				<dependency id="ToastBuddyLib" version="2.0"/>
 				<dependency id="TouchScreenBuddy" version="2.0"/>
@@ -54,6 +55,7 @@
 				<dependency id="PrimitiveBuddy" version="2.0"/>
 				<dependency id="RandomExtensions.dmanning23" version="2.0"/>
 				<dependency id="ResolutionBuddy" version="2.0"/>
+				<dependency id="ShareBuddy" version="2.0"/>
 				<dependency id="StateMachineBuddy" version="2.0"/>
 				<dependency id="ToastBuddyLib" version="2.0"/>
 				<dependency id="TouchScreenBuddy" version="2.0"/>
@@ -76,6 +78,7 @@
 				<dependency id="PrimitiveBuddy" version="2.0"/>
 				<dependency id="RandomExtensions.dmanning23" version="2.0"/>
 				<dependency id="ResolutionBuddy" version="2.0"/>
+				<dependency id="ShareBuddy" version="2.0"/>
 				<dependency id="StateMachineBuddy" version="2.0"/>
 				<dependency id="ToastBuddyLib" version="2.0"/>
 				<dependency id="TouchScreenBuddy" version="2.0"/>

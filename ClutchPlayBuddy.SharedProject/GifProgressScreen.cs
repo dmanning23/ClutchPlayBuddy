@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using MonogameScreenTools;
 using ResolutionBuddy;
+using ShareBuddy;
 using System;
 using ToastBuddyLib;
 
@@ -32,7 +33,7 @@ namespace ClutchPlayBuddy
 
 			if (e.Success)
 			{
-				var sharer = new ShareBuddy(ScreenManager.Game);
+				var sharer = new ShareHelper(ScreenManager.Game);
 				sharer.ShareImage(e.Filename, ShareText);
 			}
 			else
