@@ -97,7 +97,7 @@ namespace ClutchPlayBuddy
 		{
 			gif = new GifHelper();
 
-			ScreenManager.AddScreen(new GifProgressScreen(gif, ShareText, Content));
+			ScreenManager.AddScreen(new GifProgressScreen(gif, ShareText));
 			
 			gif.Export(Listener.CurrentClutchPlay, Filename, true, 2);
 		}

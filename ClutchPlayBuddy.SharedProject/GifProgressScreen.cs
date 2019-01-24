@@ -57,7 +57,7 @@ namespace ClutchPlayBuddy
 
 			//create the message widget
 			var width = 0f;
-			var msg = new PaddedLayout(0, 0, 24, 0, new Label("Generating Gif ...", Content)
+			var msg = new PaddedLayout(0, 0, 24, 0, new Label("Creating Gif...", Content)
 			{
 				Highlightable = false
 			})
