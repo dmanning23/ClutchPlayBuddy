@@ -1,6 +1,7 @@
 ﻿using GameTimer;
 using Microsoft.Xna.Framework;
 using MonogameScreenTools;
+using System.Threading.Tasks;
 
 namespace ClutchPlayBuddy
 {
@@ -63,9 +64,12 @@ namespace ClutchPlayBuddy
 			PostPlayTimer.Update(gameTime);
 			if (!PostPlayTimer.Paused && !PostPlayTimer.HasTimeRemaining)
 			{
-				//grab the current image stack
-				CurrentClutchPlay.CopyImageList(Grabber.CurrentImageList);
 				PostPlayTimer.Stop();
+				Task.Run(() =>
+				{
+					//grab the current image stack
+					CurrentClutchPlay.CopyImageList(Grabber.CurrentImageList);
+				});
 			}
 		}
 
