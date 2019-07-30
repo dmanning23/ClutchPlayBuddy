@@ -6,6 +6,7 @@ using MonogameScreenTools;
 using ResolutionBuddy;
 using ShareBuddy;
 using System;
+using System.Threading.Tasks;
 using ToastBuddyLib;
 
 namespace ClutchPlayBuddy
@@ -25,7 +26,7 @@ namespace ClutchPlayBuddy
 			GifHelper.OnGifCreated += GifHelper_OnGifCreated;
 		}
 
-		private void GifHelper_OnGifCreated(object sender, GifCreatedEventArgs e)
+		private async void GifHelper_OnGifCreated(object sender, GifCreatedEventArgs e)
 		{
 			GifHelper.OnGifCreated -= GifHelper_OnGifCreated;
 
@@ -39,14 +40,15 @@ namespace ClutchPlayBuddy
 			else
 			{
 				var messageDisplay = ScreenManager.Game.Services.GetService<IToastBuddy>();
-				messageDisplay.ShowMessage($"There was an error creating gif:", Color.Yellow);
-				messageDisplay.ShowMessage(e.ErrorMessage, Color.Yellow);
+				messageDisplay.ShowMessage($"Error creating gif", Color.Yellow);
+
+				await ScreenManager.AddScreen(new OkScreen(e.ErrorMessage));
 			}
 		}
 
-		public override void LoadContent()
+		public override async Task LoadContent()
 		{
-			base.LoadContent();
+			await base.LoadContent();
 
 			var layout = new RelativeLayout
 			{

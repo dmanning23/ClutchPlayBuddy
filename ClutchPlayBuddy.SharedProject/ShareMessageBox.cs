@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using MonogameScreenTools;
 using System;
+using System.Threading.Tasks;
 using ToastBuddyLib;
 #if ANDROID
 using Plugin.CurrentActivity;
@@ -40,9 +41,9 @@ namespace ClutchPlayBuddy
 			OnCancel += OnShareNo;
 		}
 
-		protected override void AddAddtionalControls()
+		protected override async Task AddAdditionalControls()
 		{
-			base.AddAddtionalControls();
+			await base.AddAdditionalControls();
 
 			StorageHelper = ScreenManager.Game.Services.GetService<IExternalStorageHelper>();
 
@@ -71,7 +72,7 @@ namespace ClutchPlayBuddy
 			});
 		}
 
-		private void OnShareYes(object sender, ClickEventArgs e)
+		private async void OnShareYes(object sender, ClickEventArgs e)
 		{
 			shareYes = true;
 
@@ -79,11 +80,11 @@ namespace ClutchPlayBuddy
 			{
 				var externalStorageMessage = new OkScreen("The image will be saved to the Pictures folder in external storage before it is shared.", Content);
 				externalStorageMessage.OnSelect += ExternalStorageMessage_OnSelect;
-				ScreenManager.AddScreen(externalStorageMessage);
+				await ScreenManager.AddScreen(externalStorageMessage);
 			}
 			else
 			{
-				BeginGifProcess();
+				await BeginGifProcess();
 				ExitScreen();
 			}
 		}
@@ -93,11 +94,11 @@ namespace ClutchPlayBuddy
 			StorageHelper.AskPermission();
 		}
 
-		private void BeginGifProcess()
+		private async Task BeginGifProcess()
 		{
 			gif = new GifHelper();
 
-			ScreenManager.AddScreen(new GifProgressScreen(gif, ShareText));
+			await ScreenManager.AddScreen(new GifProgressScreen(gif, ShareText));
 			
 			gif.Export(Listener.CurrentClutchPlay, Filename, true, 2);
 		}
@@ -117,7 +118,7 @@ namespace ClutchPlayBuddy
 
 				if (StorageHelper.HasPermission)
 				{
-					BeginGifProcess();
+					Task.Run(() => BeginGifProcess());
 				}
 				else
 				{
