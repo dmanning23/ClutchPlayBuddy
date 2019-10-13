@@ -35,7 +35,7 @@ namespace ClutchPlayBuddy
 			if (e.Success)
 			{
 				var sharer = new ShareHelper(ScreenManager.Game);
-				sharer.ShareImage(e.Filename, ShareText);
+				await sharer.ShareImage(e.Filename, ShareText);
 			}
 			else
 			{

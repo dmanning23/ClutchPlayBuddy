@@ -56,16 +56,16 @@
       <Version>1.0.3</Version>
     </PackageReference>
     <PackageReference Include="MenuBuddy">
-      <Version>2.0.43</Version>
+      <Version>2.0.47</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.Platforms">
       <Version>2.2.2</Version>
     </PackageReference>
     <PackageReference Include="MonogameScreenTools">
-      <Version>2.0.9</Version>
+      <Version>2.0.10</Version>
     </PackageReference>
     <PackageReference Include="ShareBuddy">
-      <Version>2.0.5</Version>
+      <Version>2.0.8</Version>
     </PackageReference>
     <PackageReference Include="SixLabors.ImageSharp">
       <Version>1.0.0-dev002548</Version>
