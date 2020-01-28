@@ -53,10 +53,10 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="ExternalStorageBuddy">
-      <Version>1.0.3</Version>
+      <Version>1.0.4</Version>
     </PackageReference>
     <PackageReference Include="MenuBuddy">
-      <Version>2.0.56</Version>
+      <Version>2.0.57</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.Platforms">
       <Version>2.2.2</Version>
@@ -65,7 +65,7 @@
       <Version>2.0.12</Version>
     </PackageReference>
     <PackageReference Include="ShareBuddy">
-      <Version>2.0.9</Version>
+      <Version>2.0.10</Version>
     </PackageReference>
     <PackageReference Include="SixLabors.ImageSharp">
       <Version>1.0.0-dev002548</Version>

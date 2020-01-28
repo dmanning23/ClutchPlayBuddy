@@ -34,13 +34,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ExternalStorageBuddy.WindowsDX, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ExternalStorageBuddy.1.0.3\lib\net451\ExternalStorageBuddy.WindowsDX.dll</HintPath>
+      <HintPath>..\packages\ExternalStorageBuddy.1.0.4\lib\net451\ExternalStorageBuddy.WindowsDX.dll</HintPath>
     </Reference>
     <Reference Include="FilenameBuddy.WindowsDX, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FilenameBuddy.2.0.8\lib\net452\FilenameBuddy.WindowsDX.dll</HintPath>
     </Reference>
     <Reference Include="FontBuddyLib.WindowsDX, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\FontBuddy.2.0.13\lib\net451\FontBuddyLib.WindowsDX.dll</HintPath>
+      <HintPath>..\packages\FontBuddy.2.0.15\lib\net451\FontBuddyLib.WindowsDX.dll</HintPath>
     </Reference>
     <Reference Include="GameTimer.WindowsDX, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\GameTimer.2.0.0\lib\net452\GameTimer.WindowsDX.dll</HintPath>
@@ -55,7 +55,7 @@
       <HintPath>..\packages\MatrixExtensions.2.0.0\lib\net451\MatrixExtensions.WindowsDX.dll</HintPath>
     </Reference>
     <Reference Include="MenuBuddy.WindowsDX, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MenuBuddy.2.0.56\lib\net451\MenuBuddy.WindowsDX.dll</HintPath>
+      <HintPath>..\packages\MenuBuddy.2.0.57\lib\net451\MenuBuddy.WindowsDX.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
@@ -79,7 +79,7 @@
       <HintPath>..\packages\ResolutionBuddy.2.0.1\lib\net451\ResolutionBuddy.WindowsDX.dll</HintPath>
     </Reference>
     <Reference Include="ShareBuddy.WindowsDX, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ShareBuddy.2.0.9\lib\net451\ShareBuddy.WindowsDX.dll</HintPath>
+      <HintPath>..\packages\ShareBuddy.2.0.10\lib\net451\ShareBuddy.WindowsDX.dll</HintPath>
     </Reference>
     <Reference Include="SharpDX, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
       <HintPath>..\packages\SharpDX.4.2.0\lib\net45\SharpDX.dll</HintPath>
@@ -114,8 +114,8 @@
     <Reference Include="SixLabors.ImageSharp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SixLabors.ImageSharp.1.0.0-dev002548\lib\netstandard2.0\SixLabors.ImageSharp.dll</HintPath>
     </Reference>
-    <Reference Include="SpriteFontPlus, Version=0.5.0.2, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SpriteFontPlus.MonoGame.0.5.0.2\lib\net45\SpriteFontPlus.dll</HintPath>
+    <Reference Include="SpriteFontPlus, Version=0.7.0.22, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpriteFontPlus.MonoGame.0.7.0.22\lib\net45\SpriteFontPlus.dll</HintPath>
     </Reference>
     <Reference Include="StateMachineBuddy.WindowsDX, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\StateMachineBuddy.2.0.19\lib\net451\StateMachineBuddy.WindowsDX.dll</HintPath>
