@@ -42,7 +42,7 @@ namespace ClutchPlayBuddy
 		{
 			CurrentHeuristic = 0;
 			CurrentMessage = string.Empty;
-			CurrentClutchPlay = new ImageList(Game.GraphicsDevice);
+			CurrentClutchPlay = new ImageList(Game.GraphicsDevice, Grabber.CurrentImageList.NumImages);
 			PostPlayTimer = new CountdownTimer();
 			PostPlayTimer.Stop();
 		}
