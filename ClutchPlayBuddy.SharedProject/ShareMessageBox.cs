@@ -6,7 +6,6 @@ using Microsoft.Xna.Framework.Content;
 using MonogameScreenTools;
 using System;
 using System.Threading.Tasks;
-using ToastBuddyLib;
 #if ANDROID
 using Plugin.CurrentActivity;
 #endif
