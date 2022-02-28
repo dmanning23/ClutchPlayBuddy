@@ -28,7 +28,10 @@ namespace ClutchPlayBuddy
 
 		public AnimatedGifImage(ImageList images, GraphicsDevice graphics)
 		{
-			Images = images.Images.ToList();
+			//Copy the imagelist
+			var imageList = new ImageList(images);
+			Images = imageList.Images.ToList();
+
 			CurrentIndex = 0;
 			Timer = new CountdownTimer();
 			Timer.Stop();
