@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <PackageId>ClutchPlayBuddy</PackageId>
+    <Version>5.0.0</Version>
+    <Title>ClutchPlayBuddy</Title>
+    <Authors>dmanning23</Authors>
+    <description>A MonoGame lib for sharing gameplay on social media</description>
+    <PackageProjectUrl>https://github.com/dmanning23/ClutchPlayBuddy</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/dmanning23/ClutchPlayBuddy</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>monogame</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="../README.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.*">
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="MenuBuddy" Version="5.*" />
+    <PackageReference Include="MonogameScreenTools" Version="5.*" />
+    <PackageReference Include="ShareBuddy" Version="5.*" />
+    <PackageReference Include="ToastBuddyLib" Version="5.*" />
+    <PackageReference Include="ExternalStorageBuddy" Version="5.*" />
+  </ItemGroup>
+</Project>
